@@ -2,17 +2,21 @@
 
 Print a character diamond to console
 
-B ->   A
-      B B
-       A
-
-D ->     A
-        B B
-       C   C
-      D     D
-       C   C
-        B B
-         A
+## B   
+   | A |   |
+ --- | --- | --- |
+ B |   | B |
+   | A |   |
+   
+## D   
+|   |   |   | A |   |   |   |
+| --- | --- | --- | --- | --- |  --- | --- |
+|   |   | B |   | B |   |   |
+|   | C |   |   |   | C |   |
+| D |   |   |   |   |   | D |
+|   | C |   |   |   | C |   |
+|   |   | B |   | B |   |   |
+|   |   |   | A |   |   |   |
 
 ## License
 
