@@ -4,10 +4,10 @@ Print a character diamond to console
 
 B ->   A
       B B
-       A 
+       A
 
-D ->     A   
-        B B  
+D ->     A
+        B B
        C   C
       D     D
        C   C
