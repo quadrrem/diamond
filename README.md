@@ -1,10 +1,18 @@
 # diamond
 
-A Clojure library designed to ... well, that part is up to you.
+Print a character diamond to console
 
-## Usage
-
-FIXME
+B -> _A_
+     B_B
+     _A_
+     
+D -> ___A___
+     __B_B__
+     _C___C_
+     D_____D
+     _C___C_
+     __B_B__
+     ___A___
 
 ## License
 
