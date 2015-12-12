@@ -6,24 +6,23 @@
   (map #(char %)
        (range (int \A) (+ 1 (int c)))))
 
-(defn line [c]
+(defn line [cs]
   (apply str
-     (let [r (diamond-chars c)]
-       (concat (reverse (rest r)) r))))
+       (concat (reverse (rest cs)) cs)))
 
-(defn vertical [c]
-  (let [cs (diamond-chars c)]
-      (concat cs (rest (reverse cs)))))
+(defn vertical [cs]
+  (concat cs (rest (reverse cs))))
 
 (defn diamond-line [c cs]
-  (apply str (map #(if (= c %) % \_) cs)))
+  (apply str (map #(if (= c %) % " ") cs)))
 
 (defn get-diamond [c]
-  (let [l (line c)]
+  (let [cs (diamond-chars c)
+        l (line cs)]
     (reduce (fn [ls cr]
               (conj ls (diamond-line cr l)))
             []
-            (vertical c))))
+            (vertical cs))))
 
 (def alphabet (diamond-chars \Z))
 

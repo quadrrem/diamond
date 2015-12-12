@@ -5,38 +5,38 @@
 
 (facts test-lines
   (fact "Lines"
-    (line \A) => "A"
-    (line \B) => "BAB"
-    (line \D) => "DCBABCD"))
+    (line '(\A)) => "A"
+    (line '(\A \B)) => "BAB"
+    (line '(\A \B \C \D)) => "DCBABCD"))
 
 (facts test-chars
   (fact "chars"
-    (diamond-chars \A) => (list \A)
-    (diamond-chars \B) => (list \A \B)
-    (diamond-chars \D) => (list \A \B \C \D)))
+    (diamond-chars \A) => '(\A)
+    (diamond-chars \B) => '(\A \B)
+    (diamond-chars \D) => '(\A \B \C \D)))
 
 (facts test-vertical
   (fact "vertical line"
-    (vertical \A) => (list \A)
-    (vertical \B) => (list \A \B \A)
-    (vertical \D) => (list \A \B \C \D \C \B \A)))
+    (vertical '(\A)) => '(\A)
+    (vertical '(\A \B)) => '(\A \B \A)
+    (vertical '(\A \B \C \D)) => '(\A \B \C \D \C \B \A)))
 
 (facts test-diamond-line
   (fact "diamond line"
     (diamond-line \A "A") => "A"
-    (diamond-line \B "BAB") => "B_B"
-    (diamond-line \D "DCBABCD") => "D_____D"))
+    (diamond-line \B "BAB") => "B B"
+    (diamond-line \D "DCBABCD") => "D     D"))
 
 (facts test-diamond
   (fact "diamond"
     (get-diamond \A) => ["A"]
-    (get-diamond \B) => ["_A_"
-                         "B_B"
-                         "_A_"]
-    (get-diamond \D) => ["___A___"
-                         "__B_B__"
-                         "_C___C_"
-                         "D_____D"
-                         "_C___C_"
-                         "__B_B__"
-                         "___A___"]))
+    (get-diamond \B) => [" A "
+                         "B B"
+                         " A "]
+    (get-diamond \D) => ["   A   "
+                         "  B B  "
+                         " C   C "
+                         "D     D"
+                         " C   C "
+                         "  B B  "
+                         "   A   "]))
